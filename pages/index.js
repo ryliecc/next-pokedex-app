@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PokemonOfTheDay from "../components/PokemonOfTheDay";
 
 const Header = styled.header`
   background-color: #ff00aa;
@@ -15,7 +16,7 @@ const Title = styled.h1`
 const Main = styled.main`
   background-color: #00aaff;
   height: 100%;
-  padding: 50%;
+  padding: 0.6em;
 `;
 
 const Footer = styled.footer`
@@ -32,7 +33,9 @@ export default function HomePage() {
       <Header>
         <Title>Pokédex App</Title>
       </Header>
-      <Main />
+      <Main>
+        <PokemonOfTheDay />
+      </Main>
       <Footer>
         <Credits>Made by ryliecc</Credits>
       </Footer>
