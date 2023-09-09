@@ -32,7 +32,7 @@ const Traits = styled.div`
   justify-content: space-evenly;
 `;
 
-const Trait = styled.p`
+const Trait = styled.div`
   font-size: 1.2em;
   border: 0.2em solid black;
   border-radius: 0.4em;
