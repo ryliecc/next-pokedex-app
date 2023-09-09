@@ -7,19 +7,27 @@ const NavBar = styled.nav`
   display: flex;
   width: 100%;
   height: 10%;
+  justify-content: space-between;
 `;
 
 const Button = styled.button`
   type: button;
-  width: 33%;
   height: 100%;
+  width: 30%;
+  border: none;
 `;
 
-const HomeImage = styled(HomeSvg)``;
+const HomeImage = styled(HomeSvg)`
+  width: 3em;
+`;
 
-const StarImage = styled(StarSvg)``;
+const StarImage = styled(StarSvg)`
+  width: 3em;
+`;
 
-const SettingsImage = styled(SettingsSvg)``;
+const SettingsImage = styled(SettingsSvg)`
+  width: 3em;
+`;
 
 export default function Navigation() {
   return (

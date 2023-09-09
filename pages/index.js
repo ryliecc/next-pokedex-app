@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PokemonOfTheDay from "../components/PokemonOfTheDay";
+import Navigation from "../components/Navigation";
 
 const Header = styled.header`
   background-color: #ff00aa;
@@ -38,6 +39,7 @@ export default function HomePage() {
       </Main>
       <Footer>
         <Credits>Made by ryliecc</Credits>
+        <Navigation />
       </Footer>
     </>
   );
