@@ -40,6 +40,9 @@ You can use the following commands:
 
 PokeAPI
 
-### Note to self
+### To Do
 
-for sprites use something like: `src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"`
+[x] Pokémon of the Day
+[ ] Generation Overview
+[ ] favorite List
+[ ] Settings page
