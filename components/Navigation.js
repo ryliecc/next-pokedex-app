@@ -6,8 +6,15 @@ import SettingsSvg from "../svg/heroicons/Settings.svg";
 const NavBar = styled.nav`
   display: flex;
   width: 100%;
-  height: 10%;
+  height: 3.6em;
   justify-content: space-between;
+  align-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #ff00aa;
 `;
 
 const Button = styled.button`
