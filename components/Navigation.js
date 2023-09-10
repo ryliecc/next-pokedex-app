@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import HomeSvg from "../svg/heroicons/home.svg";
 import StarSvg from "../svg/heroicons/StarOutline.svg";
 import SettingsSvg from "../svg/heroicons/Settings.svg";
+import { useRouter } from "next/router";
 
 const NavBar = styled.nav`
   display: flex;
@@ -37,15 +38,28 @@ const SettingsImage = styled(SettingsSvg)`
 `;
 
 export default function Navigation() {
+  const router = useRouter();
+
+  function handleClickHomeButton() {
+    router.push("/");
+  }
+
+  function handleClickFavoritesButton() {
+    router.push("/favorites");
+  }
+
+  function handleClickSettingsButton() {
+    router.push("/settings");
+  }
   return (
     <NavBar>
-      <Button>
+      <Button onClick={handleClickHomeButton}>
         <HomeImage />
       </Button>
-      <Button>
+      <Button onClick={handleClickFavoritesButton}>
         <StarImage />
       </Button>
-      <Button>
+      <Button onClick={handleClickSettingsButton}>
         <SettingsImage />
       </Button>
     </NavBar>
