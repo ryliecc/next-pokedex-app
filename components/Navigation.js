@@ -15,13 +15,13 @@ const NavBar = styled.nav`
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: #ff00aa;
+  background-color: #ff8b94;
 `;
 
 const Button = styled.button`
   height: 100%;
-  width: 30%;
-  border: none;
+  width: 33%;
+  border: 3px rgba(0, 0, 0, 0.2) inset;
 `;
 
 const HomeImage = styled(HomeSvg)`

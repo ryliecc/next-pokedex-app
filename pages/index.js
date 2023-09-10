@@ -4,19 +4,19 @@ import Navigation from "../components/Navigation";
 import GenerationButtons from "../components/GenerationButtons";
 
 const Header = styled.header`
-  background-color: #ff00aa;
+  background-color: #dcedc1;
   padding: 0.8em;
 `;
 
 const Title = styled.h1`
-  background-color: #00aaff;
+  background-color: #ffd3b6;
   text-align: center;
   padding: 0.2em;
-  color: #aa00ff;
+  color: #ff8b94;
 `;
 
 const Main = styled.main`
-  background-color: #00aaff;
+  background-color: #a8e6cf;
   padding: 0.6em;
   position: relative;
   top: 0em;

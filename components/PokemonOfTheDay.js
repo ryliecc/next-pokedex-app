@@ -8,8 +8,9 @@ const Wrapper = styled.div`
   align-items: center;
   border: 0.4em double black;
   border-radius: 1em;
-  padding: 0.4em;
+  padding: 0.8em 0.4em;
   margin: 0.4em 0;
+  background-color: #dcedc1;
 `;
 
 const Title = styled.h2`
@@ -69,7 +70,7 @@ export default function PokemonOfTheDay() {
   }
 
   useEffect(() => {
-    setId(getRandomId(800));
+    setId(getRandomId(641));
   }, []);
 
   if (isLoading) {
