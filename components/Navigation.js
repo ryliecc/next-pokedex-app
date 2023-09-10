@@ -19,7 +19,6 @@ const NavBar = styled.nav`
 `;
 
 const Button = styled.button`
-  type: button;
   height: 100%;
   width: 30%;
   border: none;
@@ -53,13 +52,13 @@ export default function Navigation() {
   }
   return (
     <NavBar>
-      <Button onClick={handleClickHomeButton}>
+      <Button onClick={handleClickHomeButton} type="button">
         <HomeImage />
       </Button>
-      <Button onClick={handleClickFavoritesButton}>
+      <Button onClick={handleClickFavoritesButton} type="button">
         <StarImage />
       </Button>
-      <Button onClick={handleClickSettingsButton}>
+      <Button onClick={handleClickSettingsButton} type="button">
         <SettingsImage />
       </Button>
     </NavBar>

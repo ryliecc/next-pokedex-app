@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   border: 0.4em double black;
   border-radius: 1em;
   padding: 0.4em;
+  margin: 0.4em 0;
 `;
 
 const Title = styled.h2`
@@ -68,7 +69,7 @@ export default function PokemonOfTheDay() {
   }
 
   useEffect(() => {
-    setId(getRandomId(151));
+    setId(getRandomId(800));
   }, []);
 
   if (isLoading) {

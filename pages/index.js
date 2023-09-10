@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import PokemonOfTheDay from "../components/PokemonOfTheDay";
 import Navigation from "../components/Navigation";
+import GenerationButtons from "../components/GenerationButtons";
 
 const Header = styled.header`
   background-color: #ff00aa;
@@ -16,8 +17,10 @@ const Title = styled.h1`
 
 const Main = styled.main`
   background-color: #00aaff;
-  height: 100%;
   padding: 0.6em;
+  position: relative;
+  top: 0em;
+  padding-bottom: 3.2em;
 `;
 
 const Footer = styled.footer`
@@ -36,6 +39,7 @@ export default function HomePage() {
       </Header>
       <Main>
         <PokemonOfTheDay />
+        <GenerationButtons />
       </Main>
       <Footer>
         <Credits>Made by ryliecc</Credits>
