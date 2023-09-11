@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import { useRouter } from "next/router";
 import usePokemon from "../../swr/usePokemon";
 import Navigation from "../../components/Navigation";
+import Ability from "../../components/PokeAbility";
 
 const Header = styled.header`
   background-color: #dcedc1;
@@ -19,11 +20,17 @@ const Main = styled.main`
   padding: 0.6em;
   position: relative;
   top: 0em;
-  padding-bottom: 3.2em;
+  padding-bottom: 4.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
 `;
 
 const Image = styled.img`
   width: 100%;
+  border: 0.2em solid black;
+  border-radius: 0.4em;
+  background-color: #dcedc1;
 `;
 
 const Traits = styled.div`
@@ -40,11 +47,24 @@ const Trait = styled.div`
   padding: 0.2em;
   width: 45%;
   text-align: center;
+  background-color: #dcedc1;
 `;
 
 const TraitCategory = styled.p`
   font-size: 0.8em;
 `;
+
+const AbilityList = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  border: 0.2em solid black;
+  border-radius: 0.4em;
+  background-color: #dcedc1;
+  padding: 0.4em;
+`;
+
+const SubTitle = styled.h2``;
 
 export default function PokemonPage() {
   const router = useRouter();
@@ -72,7 +92,8 @@ export default function PokemonPage() {
         <Image src={spriteSrc} alt={"Picture of " + pokemonName} />
         <Traits>
           <Trait>
-            <TraitCategory>Base XP:</TraitCategory> {baseXp}
+            <TraitCategory>Base XP:</TraitCategory>
+            {baseXp}
           </Trait>
           <Trait>
             <TraitCategory>Height:</TraitCategory> {pokemonHeight}
@@ -84,6 +105,17 @@ export default function PokemonPage() {
             <TraitCategory>Types:</TraitCategory> {typesStr}
           </Trait>
         </Traits>
+        <AbilityList>
+          <SubTitle>Abilities:</SubTitle>
+          {abilitiesArr?.map((ability) => {
+            const abilityName = ability.ability.name;
+            return (
+              <>
+                <Ability abilityName={abilityName} />
+              </>
+            );
+          })}
+        </AbilityList>
       </Main>
       <Navigation />
     </>
