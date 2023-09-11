@@ -17,6 +17,7 @@ const Button = styled.button`
   width: 100%;
   font-size: 1.2em;
   padding: 0.6em;
+  background-color: #dcedc1;
 `;
 
 export default function RegionButtons() {
@@ -42,11 +43,16 @@ export default function RegionButtons() {
     router.push("/pokedex/5");
   }
 
+  function handleClickUnovaButton() {
+    router.push("/pokedex/8");
+  }
+
+  function handleClickAlolaButton() {
+    router.push("/pokedex/16");
+  }
+
   return (
     <Wrapper>
-      <Button type="button" onClick={handleClickNationalButton}>
-        National
-      </Button>
       <Button type="button" onClick={handleClickKantoButton}>
         Kanto
       </Button>
@@ -58,6 +64,15 @@ export default function RegionButtons() {
       </Button>
       <Button type="button" onClick={handleClickSinnohButton}>
         Sinnoh
+      </Button>
+      <Button type="button" onClick={handleClickUnovaButton}>
+        Unova
+      </Button>
+      <Button type="button" onClick={handleClickAlolaButton}>
+        Alola
+      </Button>
+      <Button type="button" onClick={handleClickNationalButton}>
+        National
       </Button>
     </Wrapper>
   );
