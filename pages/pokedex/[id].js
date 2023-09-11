@@ -71,8 +71,10 @@ export default function PokedexPage() {
   const { id } = router.query;
   const { pokedex, isLoading, isError } = usePokedex(id);
 
-  const pokedexName =
-    pokedex?.name.charAt(0).toUpperCase() + pokedex?.name.slice(1);
+  const enPokedexNameArr = pokedex?.names.find(
+    (name) => name.language.name === "en"
+  );
+  const enPokedexName = enPokedexNameArr?.name;
   const enDescriptionArr = pokedex?.descriptions.find(
     (description) => description.language.name === "en"
   );
@@ -97,7 +99,7 @@ export default function PokedexPage() {
   return (
     <>
       <Header>
-        <Title>{pokedexName} Dex</Title>
+        <Title>{enPokedexName} Dex</Title>
       </Header>
       <Main>
         <PokeList>
