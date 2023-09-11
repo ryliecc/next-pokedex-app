@@ -75,8 +75,8 @@ export default function PokemonPage() {
     pokemonData?.name.charAt(0).toUpperCase() + pokemonData?.name.slice(1);
   const spriteSrc = pokemonData?.sprites.front_default;
   const baseXp = pokemonData?.base_experience;
-  const pokemonHeight = pokemonData?.height;
-  const pokemonWeight = pokemonData?.weight;
+  const pokemonHeight = pokemonData?.height * 10;
+  const pokemonWeight = pokemonData?.weight / 10;
   const abilitiesArr = pokemonData?.abilities;
   const typesArr = pokemonData?.types;
   const typesStr = typesArr?.map((type) => {
@@ -96,10 +96,10 @@ export default function PokemonPage() {
             {baseXp}
           </Trait>
           <Trait>
-            <TraitCategory>Height:</TraitCategory> {pokemonHeight}
+            <TraitCategory>Height:</TraitCategory> {pokemonHeight} cm
           </Trait>
           <Trait>
-            <TraitCategory>Weight:</TraitCategory> {pokemonWeight}
+            <TraitCategory>Weight:</TraitCategory> {pokemonWeight} kg
           </Trait>
           <Trait>
             <TraitCategory>Types:</TraitCategory> {typesStr}
