@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import usePokemon from "../swr/usePokemon";
+import { useRouter } from "next/router";
 
 const Pokemon = styled.li`
   font-size: 1.2em;
@@ -46,6 +47,7 @@ const Image = styled.img`
 `;
 
 export default function DexPokemonItem({ pokedexEntry }) {
+  const router = useRouter();
   const { pokemonData, isLoading, isError } = usePokemon(
     pokedexEntry.pokemon_species.name
   );
@@ -56,9 +58,14 @@ export default function DexPokemonItem({ pokedexEntry }) {
     pokedexEntry.pokemon_species.name.slice(1);
   const spriteSrc = pokemonData?.sprites.front_default;
 
+  function handleClickPokemon() {
+    const href = "/pokemon/" + pokedexEntry.pokemon_species.name;
+    router.push(href);
+  }
+
   if (isLoading) {
     return (
-      <Pokemon>
+      <Pokemon onClick={handleClickPokemon}>
         <EntryNumber>{number}</EntryNumber>
         {/* shadow here */}
         <Name>{name}</Name>
@@ -67,7 +74,7 @@ export default function DexPokemonItem({ pokedexEntry }) {
   }
   if (isError) {
     return (
-      <Pokemon>
+      <Pokemon onClick={handleClickPokemon}>
         <EntryNumber>{number}</EntryNumber>
         {/* shadow here */}
         <Name>{name}</Name>
@@ -75,7 +82,7 @@ export default function DexPokemonItem({ pokedexEntry }) {
     );
   }
   return (
-    <Pokemon>
+    <Pokemon onClick={handleClickPokemon}>
       <Image src={spriteSrc} alt={"Picture of " + name} />
       <EntryNumber>{number}</EntryNumber>
       <Name>{name}</Name>
