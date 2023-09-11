@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import usePokemon from "../swr/usePokemon";
+import LoadingComponent from "./Loading";
 
 const Wrapper = styled.div`
   display: flex;
@@ -74,10 +75,50 @@ export default function PokemonOfTheDay() {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <Wrapper>
+        <Title>Pokémon of the Day</Title>
+        <PokemonName>Loading ...</PokemonName>
+        <LoadingComponent />
+        <Traits>
+          <Trait>
+            <TraitCategory>Ability:</TraitCategory>...
+          </Trait>
+          <Trait>
+            <TraitCategory>Type:</TraitCategory>...
+          </Trait>
+          <Trait>
+            <TraitCategory>Index:</TraitCategory>...
+          </Trait>
+          <Trait>
+            <TraitCategory>Version:</TraitCategory>...
+          </Trait>
+        </Traits>
+      </Wrapper>
+    );
   }
   if (isError) {
-    return <div>Error...</div>;
+    return (
+      <Wrapper>
+        <Title>Pokémon of the Day</Title>
+        <PokemonName>Error fetching ...</PokemonName>
+        {/* add error image here */}
+        <Traits>
+          <Trait>
+            <TraitCategory>Ability:</TraitCategory>...
+          </Trait>
+          <Trait>
+            <TraitCategory>Type:</TraitCategory>...
+          </Trait>
+          <Trait>
+            <TraitCategory>Index:</TraitCategory>...
+          </Trait>
+          <Trait>
+            <TraitCategory>Version:</TraitCategory>...
+          </Trait>
+        </Traits>
+      </Wrapper>
+    );
   }
   return (
     <Wrapper>
