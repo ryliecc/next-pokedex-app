@@ -115,7 +115,7 @@ export default function PokemonPage() {
           </Trait>
         </Traits>
         <TypeList>
-          {typesArr.map((type) => {
+          {typesArr?.map((type) => {
             return (
               <>
                 <TypeBadge type={type.type.name} key={type.type.name} />
