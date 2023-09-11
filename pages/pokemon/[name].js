@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import usePokemon from "../../swr/usePokemon";
 import Navigation from "../../components/Navigation";
 import Ability from "../../components/PokeAbility";
+import TypeBadge from "../../components/TypeBadge";
 
 const Header = styled.header`
   background-color: #dcedc1;
@@ -22,12 +23,14 @@ const Main = styled.main`
   top: 0em;
   padding-bottom: 4.2em;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 0.6em;
 `;
 
 const Image = styled.img`
-  width: 100%;
+  width: 90%;
+  text-align: center;
   border: 0.2em solid black;
   border-radius: 0.4em;
   background-color: #dcedc1;
@@ -52,6 +55,12 @@ const Trait = styled.div`
 
 const TraitCategory = styled.p`
   font-size: 0.8em;
+`;
+
+const TypeList = styled.ul`
+  display: flex;
+  justify-content: center;
+  gap: 0.2em;
 `;
 
 const AbilityList = styled.ul`
@@ -105,6 +114,15 @@ export default function PokemonPage() {
             <TraitCategory>Types:</TraitCategory> {typesStr}
           </Trait>
         </Traits>
+        <TypeList>
+          {typesArr.map((type) => {
+            return (
+              <>
+                <TypeBadge type={type.type.name} />
+              </>
+            );
+          })}
+        </TypeList>
         <AbilityList>
           <SubTitle>Abilities:</SubTitle>
           {abilitiesArr?.map((ability) => {
