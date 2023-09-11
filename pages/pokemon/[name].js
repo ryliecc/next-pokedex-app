@@ -118,7 +118,7 @@ export default function PokemonPage() {
           {typesArr.map((type) => {
             return (
               <>
-                <TypeBadge type={type.type.name} />
+                <TypeBadge type={type.type.name} key={type.type.name} />
               </>
             );
           })}
