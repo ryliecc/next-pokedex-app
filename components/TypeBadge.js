@@ -2,14 +2,14 @@ import { styled } from "styled-components";
 
 const Badge = styled.div`
   width: 6em;
-  height: 2.4em;
+  height: 1.6em;
   border: 1px solid black;
 `;
 
 const Text = styled.p`
   font-size: 1em;
   text-align: center;
-  padding: 0.45em;
+  padding: 0.1em;
 `;
 
 export default function TypeBadge({ type }) {

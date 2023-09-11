@@ -61,6 +61,8 @@ const TypeList = styled.ul`
   display: flex;
   justify-content: center;
   gap: 0.2em;
+  position: absolute;
+  top: 18.6em;
 `;
 
 const AbilityList = styled.ul`
@@ -86,11 +88,11 @@ export default function PokemonPage() {
   const baseXp = pokemonData?.base_experience;
   const pokemonHeight = pokemonData?.height * 10;
   const pokemonWeight = pokemonData?.weight / 10;
+  const pokemonSpecies =
+    pokemonData?.species.name.charAt(0).toUpperCase() +
+    pokemonData?.species.name.slice(1);
   const abilitiesArr = pokemonData?.abilities;
   const typesArr = pokemonData?.types;
-  const typesStr = typesArr?.map((type) => {
-    return type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1);
-  });
 
   return (
     <>
@@ -105,13 +107,13 @@ export default function PokemonPage() {
             {baseXp}
           </Trait>
           <Trait>
+            <TraitCategory>Species:</TraitCategory> {pokemonSpecies}
+          </Trait>
+          <Trait>
             <TraitCategory>Height:</TraitCategory> {pokemonHeight} cm
           </Trait>
           <Trait>
             <TraitCategory>Weight:</TraitCategory> {pokemonWeight} kg
-          </Trait>
-          <Trait>
-            <TraitCategory>Types:</TraitCategory> {typesStr}
           </Trait>
         </Traits>
         <TypeList>
