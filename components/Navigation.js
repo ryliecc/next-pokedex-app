@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import HomeSvg from "../svg/heroicons/home.svg";
+import HomeSvg from "../svg/heroicons/Home.svg";
 import StarSvg from "../svg/heroicons/StarOutline.svg";
 import SettingsSvg from "../svg/heroicons/Settings.svg";
 import { useRouter } from "next/router";
