@@ -9,7 +9,7 @@ export default function usePokemon(id) {
   );
 
   return {
-    pokemon: data,
+    pokemonData: data,
     isLoading,
     isError: error,
   };

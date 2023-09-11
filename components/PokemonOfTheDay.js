@@ -50,20 +50,21 @@ const TraitCategory = styled.p`
 
 export default function PokemonOfTheDay() {
   const [id, setId] = useState("25");
-  const { pokemon, isLoading, isError } = usePokemon(id);
+  const { pokemonData, isLoading, isError } = usePokemon(id);
 
-  const name = pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1);
+  const name =
+    pokemonData?.name.charAt(0).toUpperCase() + pokemonData?.name.slice(1);
   const ability =
-    pokemon?.abilities[0].ability.name.charAt(0).toUpperCase() +
-    pokemon?.abilities[0].ability.name.slice(1);
+    pokemonData?.abilities[0].ability.name.charAt(0).toUpperCase() +
+    pokemonData?.abilities[0].ability.name.slice(1);
   const type =
-    pokemon?.types[0].type.name.charAt(0).toUpperCase() +
-    pokemon?.types[0].type.name.slice(1);
-  const index = pokemon?.game_indices[0].game_index;
+    pokemonData?.types[0].type.name.charAt(0).toUpperCase() +
+    pokemonData?.types[0].type.name.slice(1);
+  const index = pokemonData?.game_indices[0].game_index;
   const version =
-    pokemon?.game_indices[0].version.name.charAt(0).toUpperCase() +
-    pokemon?.game_indices[0].version.name.slice(1);
-  const spriteSrc = pokemon?.sprites.front_default;
+    pokemonData?.game_indices[0].version.name.charAt(0).toUpperCase() +
+    pokemonData?.game_indices[0].version.name.slice(1);
+  const spriteSrc = pokemonData?.sprites.front_default;
 
   function getRandomId(max) {
     const int = Math.floor(Math.random() * max);
