@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { useRouter } from "next/router";
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,15 +20,44 @@ const Button = styled.button`
 `;
 
 export default function GenerationButtons() {
+  const router = useRouter();
+
+  function handleClickGenIButton() {
+    router.push("/generations/generation-i");
+  }
+
+  function handleClickGenIiButton() {
+    router.push("/generations/generation-ii");
+  }
+
+  function handleClickGenIiiButton() {
+    router.push("/generations/generation-iii");
+  }
+
+  function handleClickGenIvButton() {
+    router.push("/generations/generation-iv");
+  }
+
+  function handleClickGenVButton() {
+    router.push("/generations/generation-v");
+  }
   return (
     <Wrapper>
-      <Button type="button">I. Generation</Button>
-      <Button type="button">II. Generation</Button>
-      <Button type="button">III. Generation</Button>
-      <Button type="button">IV. Generation</Button>
-      <Button type="button">V. Generation</Button>
-      <Button type="button">VI. Generation</Button>
-      <Button type="button">VII. Generation</Button>
+      <Button type="button" onClick={handleClickGenIButton}>
+        I. Generation
+      </Button>
+      <Button type="button" onClick={handleClickGenIiButton}>
+        II. Generation
+      </Button>
+      <Button type="button" onClick={handleClickGenIiiButton}>
+        III. Generation
+      </Button>
+      <Button type="button" onClick={handleClickGenIvButton}>
+        IV. Generation
+      </Button>
+      <Button type="button" onClick={handleClickGenVButton}>
+        V. Generation
+      </Button>
     </Wrapper>
   );
 }

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Navigation from "../components/Navigation";
+import Navigation from "../../components/Navigation";
 import useGeneration from "../../swr/useGeneration";
 
 export default function GenerationPage() {
@@ -15,6 +15,7 @@ export default function GenerationPage() {
   }
   return (
     <>
+      <div>{name}</div>
       <Navigation />
     </>
   );
