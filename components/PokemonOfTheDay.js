@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import usePokemon from "../swr/usePokemon";
 import LoadingComponent from "./Loading";
+import { useRouter } from "next/router";
 
 const Wrapper = styled.div`
   display: flex;
@@ -49,6 +50,7 @@ const TraitCategory = styled.p`
 `;
 
 export default function PokemonOfTheDay() {
+  const router = useRouter();
   const [id, setId] = useState("25");
   const { pokemonData, isLoading, isError } = usePokemon(id);
 
@@ -69,6 +71,10 @@ export default function PokemonOfTheDay() {
   function getRandomId(max) {
     const int = Math.floor(Math.random() * max);
     return int.toString();
+  }
+
+  function handleClickPotd() {
+    router.push("/pokemon/" + id);
   }
 
   useEffect(() => {
@@ -122,7 +128,7 @@ export default function PokemonOfTheDay() {
     );
   }
   return (
-    <Wrapper>
+    <Wrapper onClick={handleClickPotd}>
       <Title>Pokémon of the Day</Title>
       <PokemonName>{name}</PokemonName>
       <Image src={spriteSrc} alt={"Picture of " + name} />
