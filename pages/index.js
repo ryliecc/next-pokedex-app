@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import PokemonOfTheDay from "../components/PokemonOfTheDay";
 import Navigation from "../components/Navigation";
-import GenerationButtons from "../components/GenerationButtons";
+import RegionButtons from "../components/RegionButtons";
 
 const Header = styled.header`
   background-color: #dcedc1;
@@ -39,7 +39,7 @@ export default function HomePage() {
       </Header>
       <Main>
         <PokemonOfTheDay />
-        <GenerationButtons />
+        <RegionButtons />
       </Main>
       <Footer>
         <Credits>Made by ryliecc</Credits>

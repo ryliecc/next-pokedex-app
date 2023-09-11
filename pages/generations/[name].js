@@ -5,7 +5,9 @@ import useGeneration from "../../swr/useGeneration";
 export default function GenerationPage() {
   const router = useRouter();
   const { name } = router.query;
-  const { generation, isLoading, isError } = useGeneration(name);
+  let { generation, isLoading, isError } = useGeneration(name);
+
+  const mainRegion = generation?.main_region.name;
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -16,6 +18,7 @@ export default function GenerationPage() {
   return (
     <>
       <div>{name}</div>
+      <div>Main region: {mainRegion}</div>
       <Navigation />
     </>
   );
