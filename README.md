@@ -42,7 +42,7 @@ PokeAPI
 
 ### To Do
 
-[x] Pokémon of the Day
-[ ] Generation Overview
-[ ] favorite List
-[ ] Settings page
+- [x] Pokémon of the Day
+- [ ] Generation Overview
+- [ ] favorite List
+- [ ] Settings page
